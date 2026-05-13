@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         #app-viewer {
@@ -36,6 +37,11 @@
 
         .viewer-header .logo {
             font-size: 1.2rem;
+        }
+
+        .viewer-header .logo-img {
+            width: 24px;
+            height: 24px;
         }
 
         .viewer-controls {
@@ -79,7 +85,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo" onclick="closeTool()">
-                <span class="logo-icon">A</span>
+                <img src="logo.png" alt="Apex Tools" class="logo-img">
                 Apex Tools
             </a>
             <ul class="nav-links">
@@ -92,10 +98,10 @@
 
     <div id="app-viewer">
         <header class="viewer-header">
-            <div class="logo">
-                <span class="logo-icon">A</span>
-                <span id="current-tool-name">Tool Name</span>
-            </div>
+            <a href="javascript:void(0)" class="logo" onclick="closeTool()">
+                <img src="logo.png" alt="Apex Tools" class="logo-img">
+                Apex Tools
+            </a>
             <div class="viewer-controls">
                 <div class="tool-selector">
                     <select id="tool-jump" onchange="launchTool(this.value, this.options[this.selectedIndex].text)">
@@ -230,9 +236,7 @@
             if (!url) return;
             const viewer = document.getElementById('app-viewer');
             const iframe = document.getElementById('tool-iframe');
-            const nameLabel = document.getElementById('current-tool-name');
             
-            nameLabel.innerText = name;
             iframe.src = url;
             viewer.style.display = 'flex';
             document.body.classList.add('app-mode');

@@ -57,11 +57,11 @@ body {
     gap: 0.5rem;
 }
 
-.logo-icon {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    padding: 0.2rem 0.8rem;
-    border-radius: 8px;
-    font-weight: 900;
+.logo-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 6px;
 }
 
 .nav-links {
