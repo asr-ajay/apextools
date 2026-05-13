@@ -224,13 +224,14 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Apex Tools. All rights reserved.</p>
+                <p>&copy; <span id="current-year"></span> Apex Tools. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
         lucide.createIcons();
+        document.getElementById('current-year').innerText = new Date().getFullYear();
 
         function launchTool(url, name) {
             if (!url) return;
